@@ -1,0 +1,7 @@
+Copying source code from this repository must include our LICENSE.txt in any
+frontend applications or include our LICENSE in publicly released source code.
+
+Copyright 2021-2022 Integral Ad Science, Inc. - https://github.com/integralads/dependency-deep-scan-utilities
+
+This repository also contains the following 3rd party copyrights
+configs/docker-scripts/reduced-log-run.sh MIT License - https://github.com/samrocketman/home

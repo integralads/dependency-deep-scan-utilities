@@ -1,0 +1,4 @@
+Copyright 2021-2022 Integral Ad Science, Inc.
+
+--- 3rd party notices
+configs/docker-scripts/reduced-log-run.sh MIT License - https://github.com/samrocketman/home

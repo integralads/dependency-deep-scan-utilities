@@ -1,0 +1,15 @@
+# ignore everything
+*
+
+#allow git to track only specific files at the root of the repository.  This is
+#to support us generating multiple cache directories for dependency scanning.
+!/.gitignore
+!/Makefile
+!/*.md
+!/*.sh
+!/configs
+!/configs/**/*
+!/Dockerfile
+!/NOTICE*
+!/COPYING*
+!/LICENSE*
