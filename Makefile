@@ -76,13 +76,13 @@ $(OUTPUT_DIR):
 	if [ "$$(uname)" = Linux ]; then chown 1000:1000 "$(OUTPUT_DIR)"; fi
 
 repos:
-	@if [ ! -d repos ]; then \
-	echo 'There is no repos/ folder, see the README for how to clone your Git repositories.' >&2; \
+	@if [ ! -d '$(REPO_DIR)' ]; then \
+	echo 'There is no $(REPO_DIR) folder, see the README for how to clone your Git repositories.' >&2; \
 	exit 1; \
 	fi
 
 find-no-repos:
-	@if [ -z "$$(find repos -maxdepth 1 -name '*.git' | head -n1)" ]; then \
+	@if [ -z "$$(find '$(REPO_DIR)' -maxdepth 1 -name '*.git' | head -n1)" ]; then \
 	echo 'The repos/ folder exists but there is no Git repository mirrors cloned.  Follow the README and clone your source code.' >&2; \
 	exit 1; \
 	fi
