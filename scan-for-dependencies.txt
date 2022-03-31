@@ -1,0 +1,6 @@
+# log4shell vulnerability
+org.apache.logging.log4j:log4j-core:jar
+
+# sprint4shell vulnerability (do not include format)
+org.springframework:spring-webmvc:
+org.springframework:spring-webflux:

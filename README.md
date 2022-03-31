@@ -196,7 +196,7 @@ covering the whole org.
 
 The result of `Usage` will create a CSV file at the root of the repository.
 
-    ls log4j-core-versions.csv
+    ls scanned-versions.csv
 
 If you're working from a large Git backup and you'd like to limit what shows up
 in the spreadsheet then you can run the following script.
@@ -208,7 +208,7 @@ in the spreadsheet then you can run the following script.
 ./get-unarchived-repositories.sh --after 1y
 ```
 
-Upload `log4j-core-versions.csv` to your favorite spreadsheet software and start
+Upload `scanned-versions.csv` to your favorite spreadsheet software and start
 a coordinated approach to fixing log4j issues in your organization.
 
 # How to update your CSV by rerunning scans
@@ -223,7 +223,7 @@ and then running another scan.
 
 You can get progress updates by running `make progress` as the scan progresses.
 
-You can update your team spreadsheet with the new `log4j-core-versions.csv`.
+You can update your team spreadsheet with the new `scanned-versions.csv`.
 
 # Limitations
 
@@ -292,6 +292,12 @@ build tools then you may want to also exclude them in the following command.
 
 See `java -jar cloneable.jar --help` for additional usage and exclusion
 capabilities.
+
+# Roadmap
+
+- [x] Initial release for log4j-scans
+- [x] spring4shell release for scanning multiple dependencies.
+- [ ] Support for more languages relying on CycloneDX BOM format.
 
 # License
 
