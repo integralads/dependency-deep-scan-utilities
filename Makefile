@@ -38,7 +38,10 @@ docker:
 	docker build --build-arg MAVEN_VERSION="$(MAVEN_VERSION)" -t deep-scanner .
 
 archive:
-	find . -maxdepth 2 -type f -name '*.giturl' | cut -d/ -f2 | sort -u | xargs -- tar -czf results.tar.gz
+	( \
+	find . -maxdepth 2 -type f -name '*.giturl' | cut -d/ -f2; \
+	find * -maxdepth 0 -type d | xargs -n1 -I{} echo {}.txt | xargs -n1 -I{} -- find * -maxdepth 1 -type f -name {}; \
+	) | sort -u | xargs -- tar -czf results.tar.gz
 
 build: check-docker repos find-no-repos $(CACHE_DIR) $(OUTPUT_DIR) 
 	find $(REPO_DIR) -maxdepth 2 -type d -name '*.git' | \
@@ -57,7 +60,7 @@ progress:
 	@docker ps -aq | wc -l
 
 csv:
-	./generate-csv.sh * > log4j-core-versions.csv
+	./generate-csv.sh * > scanned-versions.csv
 
 reset-progress:
 	find * -maxdepth 1 -type f -name '*.giturl' -exec rm -f {} +
