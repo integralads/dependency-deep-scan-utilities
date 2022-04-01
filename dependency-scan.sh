@@ -3,6 +3,11 @@
 # MIT License - https://github.com/integralads/dependency-deep-scan-utilities/blob/master/README.md
 set -exo pipefail
 
+# https://stackoverflow.com/questions/58991966/what-java-security-egd-option-is-for
+export MAVEN_OPTS GRADLE_OPTS
+MAVEN_OPTS='-Djava.security.egd=file:/dev/./urandom'" ${MAVEN_OPTS:-}"
+GRADLE_OPTS='-Djava.security.egd=file:/dev/./urandom'" ${GRADLE_OPTS:-}"
+
 java_versions=(
   openjdk8
   openjdk11
